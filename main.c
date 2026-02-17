@@ -7,7 +7,7 @@ int main()
 
     int cnt = 0;
     int i = 0;
-    while (str[i] != '\0')
+    while ((str[i]) && (cnt>=0))
     {
         if (str[i] == '(')
         {
@@ -22,15 +22,11 @@ int main()
 
     if (cnt == 0)
     {
-        printf("TRUE: equal number of brackets\n\n");
-    }
-    else if (cnt > 0)
-    {
-        printf("FALSE: opened brackets > closed brackets\n\n");
+        printf("TRUE: balance of brackets\n\n");
     }
     else
     {
-        printf("FALSE: opened brackets < closed brackets\n\n");
+        printf("FALSE: no balance of brackets\n\n");
     }
 
     return 0;
