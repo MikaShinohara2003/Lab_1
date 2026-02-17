@@ -20,6 +20,18 @@ int main()
         i++;
     }
 
-    printf("%d\n", cnt);
+    if (cnt == 0)
+    {
+        printf("TRUE: equal number of brackets\n\n");
+    }
+    else if (cnt > 0)
+    {
+        printf("FALSE: opened brackets > closed brackets\n\n");
+    }
+    else
+    {
+        printf("FALSE: opened brackets < closed brackets\n\n");
+    }
+
     return 0;
 }
