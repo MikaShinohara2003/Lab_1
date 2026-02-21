@@ -3,7 +3,7 @@
 int main()
 {
     char str[50];
-    scanf("%[^\n]", str);
+    scanf("%[^.]", str);
 
     int i = 0;
     int cnt = 0;
