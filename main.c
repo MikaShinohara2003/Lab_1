@@ -7,9 +7,17 @@ int main()
 
     int num = 0;
     int i = 0;
-    while (str[i])
+    char flag = '1';
+    while ((str[i]) || (flag == '1'))
     {
-        num = num*10 + (str[i]-'0');
+        if ((str[i] < '0') || (str[i] > '9'))
+        {
+            flag = '0';
+        }
+        else
+        {
+            num = num*10 + (str[i]-'0');
+        }
         i++;
     }
 
