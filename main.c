@@ -3,7 +3,8 @@
 int main()
 {
     char str[50];
-    scanf("%s", str);
+    printf("Enter one number (from 1 to 9 symbols):\n");
+    scanf("%9s", str);
 
     int num = 0;
     int i = 0;
