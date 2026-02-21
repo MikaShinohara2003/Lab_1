@@ -15,6 +15,10 @@ int main()
         i++;
         flag_minus = '0';
     }
+    if (str[0] == '+')
+    {
+        i++;
+    }
 
     while ((str[i]) && (flag == '1'))
     {
