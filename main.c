@@ -21,6 +21,13 @@ int main()
         i++;
     }
 
-    printf("%d\n", num);
+    if (flag == '1')
+    {
+        printf("%d\n", num);
+    }
+    else
+    {
+        printf("Symbols can't be converted\n");
+    }
     return 0;
 }
