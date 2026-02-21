@@ -8,7 +8,7 @@ int main()
     int num = 0;
     int i = 0;
     char flag = '1';
-    while ((str[i]) || (flag == '1'))
+    while ((str[i]) && (flag == '1'))
     {
         if ((str[i] < '0') || (str[i] > '9'))
         {
