@@ -11,12 +11,12 @@ int main()
     char flag = '1';
     char flag_minus = '1';
 
-    if (str[0] == '-')
+    if ((str[0] == '-') && (str[1] != '\0'))
     {
         i++;
         flag_minus = '0';
     }
-    if (str[0] == '+')
+    if ((str[0] == '+') && (str[1] != '\0'))
     {
         i++;
     }
