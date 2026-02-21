@@ -8,6 +8,14 @@ int main()
     int num = 0;
     int i = 0;
     char flag = '1';
+    char flag_minus = '1';
+
+    if (str[0] == '-')
+    {
+        i++;
+        flag_minus = '0';
+    }
+
     while ((str[i]) && (flag == '1'))
     {
         if ((str[i] < '0') || (str[i] > '9'))
@@ -19,6 +27,11 @@ int main()
             num = num*10 + (str[i]-'0');
         }
         i++;
+    }
+
+    if (flag_minus == '0')
+    {
+        num = 0 - num;
     }
 
     if (flag == '1')
