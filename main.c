@@ -11,7 +11,7 @@ int main()
     char second_w;
     while (str[i])
     {
-        if (str[i] == ' ')
+        if ((str[i] == ' ') || (str[i] == ','))
         {
             second_w = str[i-1];
             if (first_w == second_w)
@@ -21,6 +21,11 @@ int main()
             first_w = str[i+1];
         }
         i++;
+    }
+    second_w = str[i-1];
+    if (first_w == second_w)
+    {
+        cnt++;
     }
 
     printf("%d\n\n", cnt);
