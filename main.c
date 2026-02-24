@@ -2,8 +2,11 @@
 
 int main()
 {
-    char str[50];
-    scanf("%s", str);
+    char str[50] = "(7-x)*(11+y)=77"; // баланс скобок (TRUE)
+    //char str[50] = "(7(-x)*(11+y)=77"; // количество '(' больше ')' (FALSE)
+    //char str[50] = "(7-x)*(11+)y)=77"; // количество ')' больше '(' (FALSE)
+    //char str[50] = "(7)-x)*(11+y)=77"; // ')' впереди '(' (FALSE)
+    //char str[50] = "7-x*11+y=77"; // скобок нет (NO BRACKETS)
 
     int cnt = 0;
     int cnt_all = 0;
