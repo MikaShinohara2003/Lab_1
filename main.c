@@ -11,19 +11,21 @@ int main()
     //char str[50] = "sts,,,,,in,sts."; // несколько запятых между словами (2)
     //char str[50] = "sts ,,,,  ,, in,,   ,,sts."; // несколько запятых и несколько пробелов между словами(2)
     //char str[50] = "  sts in sts."; // несколько пробелов впереди(2)
-    char str[50] = ",,,sts in sts."; // несколько пробелов впереди(2)
+    //char str[50] = ",,,sts in sts."; // несколько запятых впереди(2)
+    char str[50] = "sts in sts"; // строка без точки
 
     int i = 0;
     int cnt = 0;
     char first_w;
     char second_w;
+    char fl_dot = '0';
     while ((str[i] == ' ') || (str[i] == ','))
     {
         i++;
     }
     first_w = str[i];
-    while (str[i] != '.')
-    {
+    while (str[i] != '\0')
+    {   
         if ((str[i] == ' ') || (str[i] == ','))
         {
             second_w = str[i-1];
@@ -36,7 +38,14 @@ int main()
                 first_w = str[i+1];
             }
         }
+
         i++;
+
+        if (str[i] == '.')
+        {
+            fl_dot = '1';
+            str[i] = '\0';
+        }
     }
     second_w = str[i-1];
     if (first_w == second_w)
@@ -44,6 +53,14 @@ int main()
         cnt++;
     }
 
-    printf("Number of words: %d\n\n", cnt);
+    if (fl_dot == '1')
+    {
+        printf("Number of words: %d\n\n", cnt);
+    }
+    else
+    {
+        printf("ERROR: No dot in sentence!\n\n");
+    }
+
     return 0;
 }
