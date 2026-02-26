@@ -75,7 +75,7 @@ int cnt_w_same_ltr(char str[])
 
 int main()
 {
-    //char str_origin[50] = "sts."; // первый символ равен последнему (1)
+    char str_origin[50] = "sts."; // первый символ равен последнему (1)
     //char str_origin[50] = "stsk."; // первый символ не равен последнему (0)
     //char str_origin[50] = "sts in sts."; // пробелы между словами (2)
     //char str_origin[50] = "sts,in,sts."; // запятые между словами (2)
@@ -87,9 +87,9 @@ int main()
     //char str_origin[50] = ",,,sts in sts."; // несколько запятых впереди(2)
     //char str_origin[50] = "sts in sts"; // строка без точки (error: no dot)
     //char str_origin[50] = "s^ts."; // недопустымые символы (error: invalid symbols)
-    char str_origin[50] = "."; // нет слов (error: no words)
-
-
+    //char str_origin[50] = "."; // нет слов (error: no words)
+    //char str_origin[50] = " ,      "; // нет точки (error: no dot)
+    //char str_origin[50] = " ,      ."; // нет слов (error: no words)
 
     int res_check = check_str(str_origin);
 
