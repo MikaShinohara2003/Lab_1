@@ -37,7 +37,6 @@ int cnt_w_same_ltr(char str[])
             }
 
             return cnt;
-            //str[i] = '\0';
         }
     }
 
@@ -48,16 +47,16 @@ int cnt_w_same_ltr(char str[])
 int main()
 {
     char str_origin[50] = "sts."; // первый символ равен последнему (1)
-    //char str[50] = "stsk."; // первый символ не равен последнему (0)
-    //char str[50] = "sts in sts."; // пробелы между словами (2)
-    //char str[50] = "sts,in,sts."; // запятые между словами (2)
-    //char str[50] = "sts in,sts."; // или пробел, или запятая между словами (2)
-    //char str[50] = "sts in   sts."; // несколько пробелом между словами (2)
-    //char str[50] = "sts,,,,,in,sts."; // несколько запятых между словами (2)
-    //char str[50] = "sts ,,,,  ,, in,,   ,,sts."; // несколько запятых и несколько пробелов между словами(2)
-    //char str[50] = "  sts in sts."; // несколько пробелов впереди(2)
-    //char str[50] = ",,,sts in sts."; // несколько запятых впереди(2)
-    //char str[50] = "sts in sts"; // строка без точки
+    //char str_origin[50] = "stsk."; // первый символ не равен последнему (0)
+    //char str_origin[50] = "sts in sts."; // пробелы между словами (2)
+    //char str_origin[50] = "sts,in,sts."; // запятые между словами (2)
+    //char str_origin[50] = "sts in,sts."; // или пробел, или запятая между словами (2)
+    //char str_origin[50] = "sts in   sts."; // несколько пробелом между словами (2)
+    //char str_origin[50] = "sts,,,,,in,sts."; // несколько запятых между словами (2)
+    //char str_origin[50] = "sts ,,,,  ,, in,,   ,,sts."; // несколько запятых и несколько пробелов между словами(2)
+    //char str_origin[50] = "  sts in sts."; // несколько пробелов впереди(2)
+    //char str_origin[50] = ",,,sts in sts."; // несколько запятых впереди(2)
+    //char str_origin[50] = "sts in sts"; // строка без точки (error)
 
     int cnt_w = cnt_w_same_ltr(str_origin);
 
