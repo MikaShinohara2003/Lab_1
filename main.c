@@ -1,17 +1,37 @@
 #include <stdio.h>
 
+// 0 - ОК
+// 1 - недопустимые символы
+// 2 - отсутствует точка
+// 3 - нет слов
+
 int check_str(char str[])
 {
     int i = 0;
+    int cnt_ltr = 0;
     while (str[i] != '\0')
     {
-        if (((str[i] != ',') && (str[i] != '.') && (str[i] != ' ') && (str[i] < 'A')) || ((str[i] > 'Z') && (str[i] < 'a')) || (str[i] > 'z'))
+        if ((str[i] != ' ') && (str[i] != ',') && (str[i] != '.'))
         {
-            return 1;
+            cnt_ltr++;
+            if ((str[i] < 'A') || ((str[i] > 'Z') && (str[i] < 'a')) || (str[i] > 'z'))
+            {
+                return 1;
+            }
         }
+
+        if (str[i] == '.')
+        {
+            if (cnt_ltr != 0)
+            {
+                return 0;
+            }
+            return 3;
+        }
+
         i++;
     }
-    return 0;
+    return 2;
 }
 
 int cnt_w_same_ltr(char str[])
@@ -25,6 +45,7 @@ int cnt_w_same_ltr(char str[])
         i++;
     }
     first_w = str[i];
+    i++;
     while (str[i] != '\0')
     {
         if ((str[i] == ' ') || (str[i] == ','))
@@ -41,20 +62,14 @@ int cnt_w_same_ltr(char str[])
         }
 
         i++;
-
-        if (str[i] == '.')
-        {
-            second_w = str[i-1];
-            if (first_w == second_w)
-            {
-                cnt++;
-            }
-
-            return cnt;
-        }
     }
 
-    cnt = -1;
+    second_w = str[i-1];
+    if (first_w == second_w)
+    {
+        cnt++;
+    }
+
     return cnt;
 }
 
@@ -70,8 +85,10 @@ int main()
     //char str_origin[50] = "sts ,,,,  ,, in,,   ,,sts."; // несколько запятых и несколько пробелов между словами(2)
     //char str_origin[50] = "  sts in sts."; // несколько пробелов впереди(2)
     //char str_origin[50] = ",,,sts in sts."; // несколько запятых впереди(2)
-    //char str_origin[50] = "sts in sts"; // строка без точки (error)
-    char str_origin[50] = "s^ts."; // недопустымые символы (error)
+    //char str_origin[50] = "sts in sts"; // строка без точки (error: no dot)
+    //char str_origin[50] = "s^ts."; // недопустымые символы (error: invalid symbols)
+    char str_origin[50] = "."; // нет слов (error: no words)
+
 
 
     int res_check = check_str(str_origin);
@@ -80,18 +97,19 @@ int main()
     {
         int cnt_w = cnt_w_same_ltr(str_origin);
 
-        if (cnt_w != -1)
-        {
-            printf("Number of words: %d\n\n", cnt_w);
-        }
-        else
-        {
-            printf("ERROR: No dot in sentence!\n\n");
-        }
+        printf("Number of words: %d\n\n", cnt_w);
+    }
+    else if (res_check == 1)
+    {
+        printf("ERROR: Invalid symbols in sentence!\n\n");
+    }
+    else if (res_check == 2)
+    {
+        printf("ERROR: No dot in sentence!\n\n");
     }
     else
     {
-        printf("ERROR: Invalid symbols in sentence!\n\n");
+        printf("ERROR: No words!\n\n");
     }
 
     return 0;
