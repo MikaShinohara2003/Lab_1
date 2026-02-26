@@ -64,7 +64,7 @@ int cnt_w_same_ltr(char str[])
         i++;
     }
 
-    second_w = str[i-1];
+    second_w = str[i-2];
     if (first_w == second_w)
     {
         cnt++;
