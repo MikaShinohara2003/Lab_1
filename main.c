@@ -1,25 +1,35 @@
 #include <stdio.h>
 
-int cnt_brackets(char str[])
+int check_brackets(char str[])
 {
     int cnt = 0;
-    int cnt_all = 0;
+    char fl = '0';
     int i = 0;
     while ((str[i]) && (cnt>=0))
     {
         if (str[i] == '(')
         {
             cnt++;
-            cnt_all++;
+            fl = '1';
         }
         else if (str[i] == ')')
         {
             cnt--;
-            cnt_all++;
+            fl = '1';
         }
         i++;
     }
-    return cnt;
+
+    if (fl == '0')
+    {
+        return -1;
+    }
+    else if (cnt == 0)
+    {
+        return 0;
+    }
+
+    return 1;
 }
 
 int main()
@@ -30,13 +40,13 @@ int main()
     //char str_origin[50] = "(7)-x)*(11+y)=77"; // ')' впереди '(' (FALSE)
     //char str_origin[50] = "7-x*11+y=77"; // скобок нет (NO BRACKETS)
 
-    int res_cnt = cnt_brackets(str_origin);
+    int res_cnt = check_brackets(str_origin);
 
-    //if (cnt_all == 0)
-    //{
-    //    printf("No brackets\n\n");
-    //}
-    if (res_cnt == 0)
+    if (res_cnt == -1)
+    {
+        printf("No brackets\n\n");
+    }
+    else if (res_cnt == 0)
     {
         printf("TRUE: balance of brackets\n\n");
     }
