@@ -1,20 +1,23 @@
 #include <stdio.h>
 
+int strToNum(char str[])
+{
+
+}
+
 int main()
 {
-    char str[50];
-    printf("Enter one number (from 1 to 9 symbols):\n");
-    scanf("%9s", str);
+    char str[50] = "-120";
 
     int num = 0;
     int i = 0;
     char flag = '1';
-    char flag_minus = '1';
+    char flag_minus = '0';
 
     if ((str[0] == '-') && (str[1] != '\0'))
     {
         i++;
-        flag_minus = '0';
+        flag_minus = '1';
     }
     if ((str[0] == '+') && (str[1] != '\0'))
     {
@@ -34,7 +37,7 @@ int main()
         i++;
     }
 
-    if (flag_minus == '0')
+    if (flag_minus == '1')
     {
         num = 0 - num;
     }
