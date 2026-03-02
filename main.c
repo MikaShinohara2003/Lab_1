@@ -16,10 +16,8 @@ int strToNum(char str[], int i)
         {
             return -1;
         }
-        else
-        {
-            num = num*10 + (str[i]-'0');
-        }
+
+        num = num*10 + (str[i]-'0');
         i++;
     }
 
