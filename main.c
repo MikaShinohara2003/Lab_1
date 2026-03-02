@@ -51,7 +51,7 @@ int main()
         i++;
         flag_minus = '1';
     }
-    if ((str_origin[0] == '+') && (str_origin[1] != '\0'))
+    else if ((str_origin[0] == '+') && (str_origin[1] != '\0'))
     {
         i++;
     }
