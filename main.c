@@ -34,7 +34,12 @@ int check_brackets(char str[])
 
 int main()
 {
-    char str_origin[50] = "(7-x)*(11+y)=77"; // баланс скобок (TRUE)
+    char str_origin[50] = "()"; // баланс скобок (TRUE)
+    //char str_origin[50] = "(()"; // количество '(' больше ')' (FALSE)
+    //char str_origin[50] = "())"; // количество ')' больше '(' (FALSE)
+    //char str_origin[50] = ")("; // ')' впереди '(' (FALSE)
+
+    //char str_origin[50] = "(7-x)*(11+y)=77"; // баланс скобок (TRUE)
     //char str_origin[50] = "(7(-x)*(11+y)=77"; // количество '(' больше ')' (FALSE)
     //char str_origin[50] = "(7-x)*(11+)y)=77"; // количество ')' больше '(' (FALSE)
     //char str_origin[50] = "7)-x*(11+y=77"; // ')' впереди '(' (FALSE)
