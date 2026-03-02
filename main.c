@@ -6,6 +6,11 @@ int strToNum(char str[], int i)
 
     while (str[i])
     {
+        if (i > 8)
+        {
+            return -2;
+        }
+
         if ((str[i] < '0') || (str[i] > '9'))
         {
             return -1;
@@ -22,7 +27,7 @@ int strToNum(char str[], int i)
 
 int main()
 {
-    char str_origin[50] = "120"; // 120
+    //char str_origin[50] = "120"; // 120
     //char str_origin[50] = "-120"; // -120
     //char str_origin[50] = "+120"; // 120
     //char str_origin[50] = "000120"; // 120
@@ -33,6 +38,7 @@ int main()
     //char str_origin[50] = "-"; // can't be converted
     //char str_origin[50] = "+"; // can't be converted
     //char str_origin[50] = "12v0"; // can't be converted
+    char str_origin[50] = "999999999"; // 999999999
 
     int i = 0;
     char flag_minus = '0';
@@ -49,7 +55,7 @@ int main()
 
     int res_num = strToNum(str_origin, i);
 
-    if (res_num != -1)
+    if (res_num >= 0)
     {
         if (flag_minus == '1')
         {
@@ -57,9 +63,14 @@ int main()
         }
         printf("%d\n\n", res_num);
     }
-    else
+    else if (res_num == -1)
     {
         printf("Symbols can't be converted\n\n");
     }
+    else
+    {
+        printf("Too big number\n\n");
+    }
+
     return 0;
 }
