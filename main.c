@@ -16,7 +16,7 @@ int check_str(char str[])
             cnt_ltr++;
             if ((str[i] < 'A') || ((str[i] > 'Z') && (str[i] < 'a')) || (str[i] > 'z'))
             {
-                return 1;
+                return '1';
             }
         }
 
@@ -24,14 +24,14 @@ int check_str(char str[])
         {
             if (cnt_ltr != 0)
             {
-                return 0;
+                return '0';
             }
-            return 3;
+            return '3';
         }
 
         i++;
     }
-    return 2;
+    return '2';
 }
 
 int cnt_w_same_ltr(char str[])
@@ -91,19 +91,19 @@ int main()
     //char str_origin[50] = " ,      "; // нет точки (error: no dot)
     //char str_origin[50] = " ,      ."; // нет слов (error: no words)
 
-    int res_check = check_str(str_origin);
+    char res_check = check_str(str_origin);
 
-    if (res_check == 0)
+    if (res_check == '0')
     {
         int cnt_w = cnt_w_same_ltr(str_origin);
 
         printf("Number of words: %d\n\n", cnt_w);
     }
-    else if (res_check == 1)
+    else if (res_check == '1')
     {
         printf("ERROR: Invalid symbols in sentence!\n\n");
     }
-    else if (res_check == 2)
+    else if (res_check == '2')
     {
         printf("ERROR: No dot in sentence!\n\n");
     }
