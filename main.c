@@ -22,15 +22,17 @@ int strToNum(char str[], int i)
 
 int main()
 {
-    //char str_origin[50] = "120"; // 120
+    char str_origin[50] = "120"; // 120
     //char str_origin[50] = "-120"; // -120
     //char str_origin[50] = "+120"; // 120
     //char str_origin[50] = "000120"; // 120
     //char str_origin[50] = "-000120"; // -120
     //char str_origin[50] = "+000120"; // 120
+    //char str_origin[50] = "+0"; // 0
+    //char str_origin[50] = "-0"; // 0
     //char str_origin[50] = "-"; // can't be converted
     //char str_origin[50] = "+"; // can't be converted
-    char str_origin[50] = "12v0"; // can't be converted
+    //char str_origin[50] = "12v0"; // can't be converted
 
     int i = 0;
     char flag_minus = '0';
