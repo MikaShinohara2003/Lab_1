@@ -22,14 +22,14 @@ int check_brackets(char str[])
 
     if (fl == '0')
     {
-        return -1;
+        return '2';
     }
     else if (cnt == 0)
     {
-        return 0;
+        return '0';
     }
 
-    return 1;
+    return '1';
 }
 
 int main()
@@ -41,13 +41,13 @@ int main()
     //char str_origin[50] = "7-x*11+y=77"; // скобок нет (NO BRACKETS)
     //char str_origin[50] = ""; // пустая строка (NO BRACKETS)
 
-    int res_cnt = check_brackets(str_origin);
+    char res_cnt = check_brackets(str_origin);
 
-    if (res_cnt == -1)
+    if (res_cnt == '2')
     {
         printf("No brackets\n\n");
     }
-    else if (res_cnt == 0)
+    else if (res_cnt == '0')
     {
         printf("TRUE: balance of brackets\n\n");
     }
