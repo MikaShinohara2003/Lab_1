@@ -37,8 +37,9 @@ int main()
     char str_origin[50] = "(7-x)*(11+y)=77"; // баланс скобок (TRUE)
     //char str_origin[50] = "(7(-x)*(11+y)=77"; // количество '(' больше ')' (FALSE)
     //char str_origin[50] = "(7-x)*(11+)y)=77"; // количество ')' больше '(' (FALSE)
-    //char str_origin[50] = "(7)-x)*(11+y)=77"; // ')' впереди '(' (FALSE)
+    //char str_origin[50] = "7)-x*(11+y=77"; // ')' впереди '(' (FALSE)
     //char str_origin[50] = "7-x*11+y=77"; // скобок нет (NO BRACKETS)
+    //char str_origin[50] = ""; // пустая строка (NO BRACKETS)
 
     int res_cnt = check_brackets(str_origin);
 
