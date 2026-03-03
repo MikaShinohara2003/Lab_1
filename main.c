@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int check_brackets(char str[])
+char check_brackets(char str[])
 {
     int cnt = 0;
     char fl = '0';
