@@ -5,7 +5,7 @@
 // 2 - отсутствует точка
 // 3 - нет слов
 
-int check_str(char str[])
+char check_str(char str[])
 {
     int i = 0;
     int cnt_ltr = 0;
