@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-// 0 - ОК
-// 1 - недопустимые символы
-// 2 - отсутствует точка
-// 3 - нет слов
+// 0 - OK
+// 1 - invalid symbols
+// 2 - no dot
+// 3 - no words
 
-char check_str(char str[])
+char check_str(char* str)
 {
     int i = 0;
     int cnt_ltr = 0;
@@ -34,7 +34,7 @@ char check_str(char str[])
     return '2';
 }
 
-int cnt_w_same_ltr(char str[])
+int cnt_w_same_ltr(char* str)
 {
     int i = 0;
     int cnt = 0;
@@ -75,22 +75,22 @@ int cnt_w_same_ltr(char str[])
 
 int main()
 {
-    //char str_origin[50] = "sts."; // первый символ равен последнему (1)
-    //char str_origin[50] = "stsk."; // первый символ не равен последнему (0)
-    //char str_origin[50] = "sts in sts."; // пробелы между словами (2)
-    //char str_origin[50] = "sts,in,sts."; // запятые между словами (2)
-    //char str_origin[50] = "sts in,sts."; // или пробел, или запятая между словами (2)
-    //char str_origin[50] = "sts in   sts."; // несколько пробелом между словами (2)
-    //char str_origin[50] = "sts,,,,,in,sts."; // несколько запятых между словами (2)
-    //char str_origin[50] = "sts ,,,,  ,, in,,   ,,sts."; // несколько запятых и несколько пробелов между словами(2)
-    //char str_origin[50] = "  sts in sts."; // несколько пробелов впереди(2)
-    //char str_origin[50] = ",,,sts in sts."; // несколько запятых впереди(2)
-    //char str_origin[50] = "sts in sts"; // строка без точки (error: no dot)
-    //char str_origin[50] = "s^ts."; // недопустымые символы (error: invalid symbols)
-    //char str_origin[50] = "."; // нет слов (error: no words)
-    //char str_origin[50] = " ,      "; // нет точки (error: no dot)
-    //char str_origin[50] = " ,      ."; // нет слов (error: no words)
-    char str_origin[50] = "sts in sts. krkrk"; // точка в середине предложения (2)
+    //char str_origin[50] = "sts."; // first symbol equal last (1)
+    //char str_origin[50] = "stsk."; // first symbol not equal last (0)
+    //char str_origin[50] = "sts in sts."; // spaces between words (2)
+    //char str_origin[50] = "sts,in,sts."; // commas between words (2)
+    //char str_origin[50] = "sts in,sts."; // space or comma between words (2)
+    //char str_origin[50] = "sts in   sts."; // some spaces between words (2)
+    //char str_origin[50] = "sts,,,,,in,sts."; // some commmas between words (2)
+    //char str_origin[50] = "sts ,,,,  ,, in,,   ,,sts."; // some commas and some spaces between words (2)
+    //char str_origin[50] = "  sts in sts."; // some spaces in beginning (2)
+    //char str_origin[50] = ",,,sts in sts."; // some commas in beginning (2)
+    //char str_origin[50] = "sts in sts"; // string without dot (error: no dot)
+    //char str_origin[50] = "s^ts."; // (error: invalid symbols)
+    //char str_origin[50] = "."; // (error: no words)
+    //char str_origin[50] = " ,      "; // (error: no dot)
+    //char str_origin[50] = " ,      ."; // (error: no words)
+    char str_origin[50] = "sts in sts. krkrk"; // dot in the middle of sentence (2)
 
     char res_check = check_str(str_origin);
 
