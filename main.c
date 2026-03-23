@@ -3,11 +3,16 @@
 int strToNum(char* str, int i)
 {
     int num = 0;
-    int k = 8 + i;
+    int k = 0;
+
+    while (str[i] == '0')
+    {
+        i++;
+    }
 
     while (str[i])
-    {
-        if (i > k)
+    {   
+        if (k > 8)
         {
             return -2;
         }
@@ -19,6 +24,7 @@ int strToNum(char* str, int i)
 
         num = num*10 + (str[i]-'0');
         i++;
+        k++;
     }
 
     return num;
@@ -40,6 +46,7 @@ int main()
     //char str_origin[50] = "999999999"; // 999999999
     //char str_origin[50] = "-999999999"; // -999999999
     //char str_origin[50] = "9999999999"; // too big number
+    //char str_origin[50] = "-000000000000000000000000120"; // -120
 
     int i = 0;
     char flag_minus = '0';
