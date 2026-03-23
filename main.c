@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int strToNum(char str[], int i)
+int strToNum(char* str, int i)
 {
     int num = 0;
     int k = 8 + i;
