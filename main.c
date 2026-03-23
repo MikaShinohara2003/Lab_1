@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char check_brackets(char str[])
+char check_brackets(char* str)
 {
     int cnt = 0;
     char fl = '0';
@@ -34,17 +34,17 @@ char check_brackets(char str[])
 
 int main()
 {
-    char str_origin[50] = "()"; // баланс скобок (TRUE)
-    //char str_origin[50] = "(()"; // количество '(' больше ')' (FALSE)
-    //char str_origin[50] = "())"; // количество ')' больше '(' (FALSE)
-    //char str_origin[50] = ")("; // ')' впереди '(' (FALSE)
+    char str_origin[50] = "()"; // balance of brackets (TRUE)
+    //char str_origin[50] = "(()"; // '(' more ')' (FALSE)
+    //char str_origin[50] = "())"; // ')' more '(' (FALSE)
+    //char str_origin[50] = ")("; // ')' before '(' (FALSE)
 
-    //char str_origin[50] = "(7-x)*(11+y)=77"; // баланс скобок (TRUE)
-    //char str_origin[50] = "(7(-x)*(11+y)=77"; // количество '(' больше ')' (FALSE)
-    //char str_origin[50] = "(7-x)*(11+)y)=77"; // количество ')' больше '(' (FALSE)
-    //char str_origin[50] = "7)-x*(11+y=77"; // ')' впереди '(' (FALSE)
-    //char str_origin[50] = "7-x*11+y=77"; // скобок нет (NO BRACKETS)
-    //char str_origin[50] = ""; // пустая строка (NO BRACKETS)
+    //char str_origin[50] = "(7-x)*(11+y)=77"; // balance of brackets (TRUE)
+    //char str_origin[50] = "(7(-x)*(11+y)=77"; // '(' more ')' (FALSE)
+    //char str_origin[50] = "(7-x)*(11+)y)=77"; // ')' more '(' (FALSE)
+    //char str_origin[50] = "7)-x*(11+y=77"; // ')' before '(' (FALSE)
+    //char str_origin[50] = "7-x*11+y=77"; // (NO BRACKETS)
+    //char str_origin[50] = ""; // empty string (NO BRACKETS)
 
     char res_cnt = check_brackets(str_origin);
 
